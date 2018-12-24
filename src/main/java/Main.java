@@ -259,7 +259,7 @@ public class Main {
             date = dateFrom.plusDays(i);
             for (int j = 0; j < 53; j++) {
                 Integer totalCommits = markToInt(inStrings.get(i).charAt(j));
-                if (totalCommits != 0 && date.getYear() == year) {
+                if (totalCommits != 0) {
                     commits.put(date, totalCommits);
                 }
                 date = date.plusWeeks(1);
