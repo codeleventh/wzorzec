@@ -2,14 +2,16 @@
 
 Генерирует репозиторий, коммиты которого расположены таким образом, чтобы сложиться в заданный узор в профиле. 
 
-![](https://gist.github.com/codeleventh/a6b2ce4bf933c1689376ed0100111e85/raw/772aac3b709f4365d334f9392553104be24e708c/wzorzec.png)
+![](https://gist.githubusercontent.com/codeleventh/dbf7cfd9c2def11474500737a0443f58/raw/82c6723dec12b3348dcfa73c9d4c31ec2f42de13/wzorzec.png)
 
-## Установка и настройка
-Убедиться, что git находится через path системного окружения.  
-Отредактировать wzorzec.properties, указав свои настройки (данные учетки должны соответствовать указанным в профиле 
-гитхаба).  
-Запустить [jar](https://github.com/codeleventh/wzorzec/releases), сообщив входной файл: `java -jar wzorzec.jar lolcat.txt`  
-Вручную запушить сгенерированный репозиторий.    
+## Использование
+Взять [последний релиз](https://github.com/codeleventh/wzorzec/releases), отредактировать wzorzec.properties, указав 
+свои настройки (данные учетки должны соответствовать указанным в 
+профиле на github).  
+Запустить jar, сообщив входной файл: `java -jar wzorzec.jar hearts.txt`  
+Вручную запушить сгенерированный репозиторий.
+
+В системе должен быть установленный git, который находится в path системного окружения.    
 
 ## Сборка
 Собрать артефакт со всеми зависимостями можно так: `mvn clean compile assembly:single` 
