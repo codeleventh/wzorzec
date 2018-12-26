@@ -286,7 +286,7 @@ public class Main {
                                                  props.get("github.profile"), e.getMessage()));
         }
 
-        if (profileCommits != null ||
+        if (profileCommits != null &&
             profileCommits.getMax() > commits.getMax()) {
             commits.multiplyStats(profileCommits.getMax() / 4d);
             commits.substractStats(profileCommits);
