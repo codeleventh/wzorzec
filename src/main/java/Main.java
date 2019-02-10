@@ -246,13 +246,10 @@ public class Main {
             String stdout = input.readLine();
             input.close();
 
-            if (stdout == null ||
-                !(stdout.startsWith("Initialized empty")
-                    || stdout.startsWith("Reinitialized existing"))) {
-                logger.log(Level.ERROR, "Is Git in %path% variable? Can't (re)initialize repository");
-                System.exit(-1);
+            if (p.exitValue() != 0) {
+                throw new RuntimeException(stdout);
             }
-        } catch (IOException e) {
+        } catch (IOException | RuntimeException e) {
             logger.log(Level.ERROR, "Is git in %path% variable? Can't (re)initialize repository: " + e.getMessage());
             System.exit(-1);
         }
@@ -303,7 +300,7 @@ public class Main {
 
         Path path = createFile(Paths.get(props.get("repository.name") + "/.git/refs/heads/master"));
         Files.write(path, parentHash.getBytes());
-        logger.log(Level.INFO,  totalCommits + " commits have been written");
+        logger.log(Level.INFO, totalCommits + " commits have been written");
         logger.log(Level.INFO, "master HEAD ref is updated");
     }
 }
